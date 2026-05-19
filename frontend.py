@@ -4,7 +4,7 @@ import sys
 
 async def call_fastapi_endpoint(prompt: str):
     # Route directly to the backend module port
-    url = "http://127.0.0.1/predict"
+    url = "http://127.0.0.1:8000/predict"
     payload = {"prompt": prompt}
     
     async with httpx.AsyncClient() as client:
@@ -29,4 +29,4 @@ with gr.Blocks(title="Decoupled AI App") as demo:
 
 if __name__ == "__main__":
     # Launch on a different port (8080) and generate the public proxy link
-    demo.launch(share=True, server_port=8080)
+    demo.launch(share=True, server_port=8001)
