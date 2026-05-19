@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
+from data_model import Custom_Prompt
 
 app = FastAPI()
 
